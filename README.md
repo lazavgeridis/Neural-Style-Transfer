@@ -6,7 +6,7 @@ Convolutional Neural Network (VGG-19) . Below you will find some of our generate
 
 # Examples
 <div align="center">
- <img src="https://raw.githubusercontent.com/lazavgeridis/Neural-Style-Transfer/master/images/dit_500x400.jpg" height="223px">
+ <img src="images/dit_500x400.jpg" height="223px">
  <img src="https://raw.githubusercontent.com/lazavgeridis/Neural-Style-Transfer/master/images/scream_500x400.jpg" height="223px">
  <img src="https://raw.githubusercontent.com/lazavgeridis/Neural-Style-Transfer/master/images/dit_scream_a5_b50000.jpg" height="223px">
 </div>
