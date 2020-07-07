@@ -6,7 +6,7 @@ Convolutional Neural Network (VGG-19) . Below you will find some of our generate
 
 # Examples
 <p align="center">
- <img src="images/dit_scream_a5_b100000.png" width="512">
+ <img src="images/dit_scream_a5_b100000.png" width="500">
  <img src="images/cont_styl.jpg" width="250">
 </p>
 
