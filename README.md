@@ -10,3 +10,21 @@ Convolutional Neural Network (VGG-19) . Below you will find some of our generate
  <img src="images/cont_styl.jpg" width="250">
 </p>
 
+Here, we are using the Department of Informatics and Telecommunications as content image and various well known paintings as style images. Clearly,the algorithm produces visually appealing results:
+
+<p align="center">
+<img src="images/dit_cafe_500x400.png" width="192">
+<img src="images/vangogh_cafe_500x400.jpg" width="192"/>
+[comment]: <> (<img src="examples/lions/33_output.png" width="192"/>)
+[comment]: <> (<img src="examples/lions/styles/water_lilies_crop.jpg" width="192"/>)
+[comment]: <> ()
+[comment]: <> (<img src="examples/lions/wave_output.png" width="192"/>)
+[comment]: <> (<img src="examples/lions/styles/wave_crop.jpg" width="192"/>)
+[comment]: <> (<img src="examples/lions/basquiat_output.png" width="192"/>)
+[comment]: <> (<img src="examples/lions/styles/basquiat_crop.jpg" width="192"/>  )
+[comment]: <> ()
+[comment]: <> (<img src="examples/lions/calliefink_output.png" width="192"/>)
+[comment]: <> (<img src="examples/lions/styles/calliefink_crop.jpg" width="192"/>)
+[comment]: <> (<img src="examples/lions/giger_output.png" width="192"/>)
+[comment]: <> (<img src="examples/lions/styles/giger_crop.jpg" width="192"/>)
+</p>
