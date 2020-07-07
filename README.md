@@ -13,7 +13,7 @@ Convolutional Neural Network (VGG-19) . Below you will find some of our generate
 Here, we are using the Department of Informatics and Telecommunications as content image and various well known paintings as style images. Clearly,the algorithm produces visually appealing results:
 
 <p align="center">
-<img src="images/dit_cafe_a5_b100000.png" width="192">
+<img src="images/dit_cafe_a5_b100000.jpg" width="192">
 <img src="images/vangogh_cafe_500x400.jpg" width="192"/>
 
 </p>
