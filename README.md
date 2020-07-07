@@ -5,9 +5,9 @@ Transfer algorithm synthesizes new artistic images by combining the content of o
 Convolutional Neural Network (VGG-19) . Below you will find some of our generated images.
 
 # Examples
-<div align="center">
- <img src="images/dit_scream_a5_b100000.png" width="400">
- <img src="images/dit_500x400.jpg" height="300">
- <img src="images/scream_500x400.jpg" height="300">
-</div>
+<p align="center">
+ <img src="images/dit_scream_a5_b100000.png" width="512">
+ <img src="images/dit_500x400.jpg" width="300">
+ <img src="images/scream_500x400.jpg" width="300">
+</p>
 
