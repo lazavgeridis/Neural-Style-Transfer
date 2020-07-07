@@ -5,4 +5,4 @@ Transfer algorithm synthesizes new artistic images by combining the content of o
 Convolutional Neural Network (VGG-19) .
 
 # Examples
-## Examples
+
