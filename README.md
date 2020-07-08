@@ -10,12 +10,17 @@ Convolutional Neural Network (VGG-19) . Below you will find some of our generate
  <img src="images/cont_styl.jpg" width="250">
 </p>
 
-Here, we are using the Department of Informatics and Telecommunications as content image and various well known paintings as style images. 
-Clearly, the algorithm produces visually appealing results:
+Here, we are using the [Department of Informatics and Telecommunications](https://www.di.uoa.gr/en) as content image and various well known 
+paintings as style images. Clearly, the algorithm produces visually appealing results:
 
 <p align="center">
-<img src="images/dit_cafe_a5_b100000.jpg" width="300">
+<img src="images/dit_cafe_a5_b500000.jpg" width="300">
 <img src="images/vangogh_cafe_500x400.jpg" width="300"/>
 <img src="images/dit_guernica_a5_b100000.png" width="300">
 <img src="images/guernica_500x400.jpg" width="300"/>
+<img src="images/dit_neighb_a5_b100000.jpg" width="300">
+<img src="images/neighb_colors_500x400.jpg" width="300">
+<img src="images/dit_starryn_a5_b500000.png" width="300">
+<img src="images/vangogh_500x400.jpg" width="300">
+
 </p>
