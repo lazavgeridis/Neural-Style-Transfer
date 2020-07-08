@@ -39,6 +39,8 @@ Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) 
 <img src="images/picasso_400x300.jpg" width="300">
 <img src="images/parth_wave_a5_b100000.png" width="300">
 <img src="images/wave_400x300.jpg" width="300">
+<img src="images/parth_scream_a5_b100000.png" width="300">
+<img src="images/scream_400x300.jpg" width="300">
 
 </p>
 
