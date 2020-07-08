@@ -30,6 +30,7 @@ Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) 
 
 <p align="center">
 <img src="images/acropolis_400x300.jpg" width="350"/>
+
 <img src="images/parth_kiss_a5_b50000.png" width="300">
 <img src="images/thekiss_400x300.jpg" width="300">
 
