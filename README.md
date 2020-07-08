@@ -14,7 +14,7 @@ Here, we are using the [Department of Informatics and Telecommunications](https:
 paintings as style images. Clearly, the algorithm produces visually appealing results:
 
 <p align="center">
-<img src="images/dit_cafe_a5_b500000.jpg" width="300">
+<img src="images/dit_cafe_a5_b100000.jpg" width="300">
 <img src="images/vangogh_cafe_500x400.jpg" width="300"/>
 <img src="images/dit_guernica_a5_b100000.png" width="300">
 <img src="images/guernica_500x400.jpg" width="300"/>
