@@ -14,14 +14,14 @@ Here, we are using the [Department of Informatics and Telecommunications](https:
 paintings as style images. Clearly, the algorithm produces visually appealing results:
 
 <p align="center">
+<img src="images/dit_starryn_a5_b500000.png" width="300">
+<img src="images/vangogh_500x400.jpg" width="300">
 <img src="images/dit_cafe_a5_b100000.jpg" width="300">
 <img src="images/vangogh_cafe_500x400.jpg" width="300"/>
 <img src="images/dit_guernica_a5_b100000.png" width="300">
 <img src="images/guernica_500x400.jpg" width="300"/>
 <img src="images/dit_neighb_a5_b100000.jpg" width="300">
 <img src="images/neighb_colors_500x400.jpg" width="300">
-<img src="images/dit_starryn_a5_b500000.png" width="300">
-<img src="images/vangogh_500x400.jpg" width="300">
 <img src="images/dit_scream_a5_b100000.png" width="300">
 <img src="images/scream_500x400.jpg" width="300">
 </p>
@@ -29,7 +29,7 @@ paintings as style images. Clearly, the algorithm produces visually appealing re
 Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) as the content image: 
 
 <p align="center">
-<img src="images/acropolis_400x300.jpg" width="700"/>
+<img src="images/acropolis_400x300.jpg" width="512"/>
 
 <img src="images/parth_kiss_a5_b50000.png" width="300">
 <img src="images/thekiss_400x300.jpg" width="300">
@@ -41,7 +41,8 @@ Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) 
 <img src="images/wave_400x300.jpg" width="300">
 <img src="images/parth_scream_a5_b100000.jpg" width="300">
 <img src="images/scream_400x300.jpg" width="300">
-
 </p>
+
+## Content / Style Tradeoff
 
 
