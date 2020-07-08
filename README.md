@@ -22,5 +22,7 @@ paintings as style images. Clearly, the algorithm produces visually appealing re
 <img src="images/neighb_colors_500x400.jpg" width="300">
 <img src="images/dit_starryn_a5_b500000.png" width="300">
 <img src="images/vangogh_500x400.jpg" width="300">
+<img src="images/dit_scream_a5_b100000.png" width="300">
+<img src="images/scream_500x400.jpg" width="300">
 
 </p>
