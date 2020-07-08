@@ -35,6 +35,8 @@ Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) 
 <img src="images/thekiss_400x300.jpg" width="300">
 <img src="images/parth_monet_a5_b100000.png" width="300">
 <img src="images/monet.jpg" width="300">
+<img src="images/parth_picasso_a5_b100000.png" width="300">
+<img src="images/picasso_400x300.jpg" width="300">
 
 </p>
 
