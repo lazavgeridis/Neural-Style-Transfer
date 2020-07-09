@@ -60,8 +60,9 @@ used for the Style loss are also the same.
 
 The generated image is initialized to a percentage of white noise (fixed at 99%) before being fed to the ConvNet. The optimizer of choice in this 
 implemetation is the [Adam Optimizer](https://arxiv.org/abs/1412.6980), insted of the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS), 
-which is what the authors used. As a result, the parameters of the algorithm required some tuning to obtain good results. In particular, after 
-some trial and error, we ended up on the following:
+which is what the authors used. As a result, the parameters of the algorithm required some tuning to obtain good results. In particular, we 
+experimented with different values of `content weight`, `style weight` and `learning rate`. After some trial and error, we ended up on the 
+following:
 ```
 content weight (a) = 5
 style weight (b)   = 50000/100000
