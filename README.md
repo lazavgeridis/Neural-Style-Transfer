@@ -42,5 +42,15 @@ Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) 
 </p>
 
 ## Content / Style Tradeoff
+The mix between the content and the style images can be controlled by the parameters a and b of the algorithm (see Implementation Details below).
+From left to right the parameter b (emphasis on style) is increased, whereas parameter a (emphasis on content) is fixed. The style image used 
+here is [Wassily Kardinsky's Composition VII](https://en.wikipedia.org/wiki/Composition_VII):
 
+<p align="center">
+<img src="images/composition_400x300.jpg" width="300"/>
+<img src="images/parth_comp_a5_b500.png" width="300"/>
+<img src="images/parth_comp_a5_b5000.jpg" width="300"/>
+<img src="images/parth_comp_a5_b50000.png" width="300"/>
+<img src="images/parth_comp_a5_b500000.png" width="300"/>
 
+</p>
