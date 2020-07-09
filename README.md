@@ -73,4 +73,4 @@ adjusted.
 It is highly advised to run the algorithm on a GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 
 60 minutes on a CPU!
 
-* The VGG-19 CNN can be found [here](https://drive.google.com/drive/folders/1sP6HMKGu5nGb-szZ0qbHO4Q8kgRdjLt9).
+* The pre-trained VGG-19 network can be found [here](https://www.vlfeat.org/matconvnet/pretrained/).
