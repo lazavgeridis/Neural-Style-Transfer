@@ -42,7 +42,7 @@ Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) 
 </p>
 
 ## Content / Style Tradeoff
-The mix between the content and the style images can be controlled by the parameters a and b of the algorithm (see Implementation Details below).
+One can adjust the trade-off between content and style by modifying the parameters a and b of the algorithm (see Implementation Details below).
 From left to right the parameter b (emphasis on style) is increased, whereas parameter a (emphasis on content) is fixed. The style image used 
 here is [Wassily Kardinsky's Composition VII](https://en.wikipedia.org/wiki/Composition_VII):
 
@@ -52,5 +52,13 @@ here is [Wassily Kardinsky's Composition VII](https://en.wikipedia.org/wiki/Comp
 <img src="images/parth_comp_a5_b5000.jpg" width="160"/>
 <img src="images/parth_comp_a5_b50000.png" width="160"/>
 <img src="images/parth_comp_a5_b500000.png" width="160"/>
-
 </p>
+
+## Implementation Details
+The Content and Style loss functions used are exactly the same as the ones the authors of the paper originally used. Furthermore, the style layers
+used for the Style loss are also the same. 
+The generated image is initialized to a percentage of white noise (fixed at 99%) before being fed to the ConvNet. The optimizer of choice in this 
+implemetation is the [Adam Optimizer](https://arxiv.org/abs/1412.6980), insted of the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS), 
+which is what the authors used. As a result, the parameters of the algorithm required some tuning to obtain good results. In particular, after 
+some trial and error, we ended
+The VGG-19 CNN can be found [here](https://drive.google.com/drive/folders/1sP6HMKGu5nGb-szZ0qbHO4Q8kgRdjLt9).
