@@ -56,9 +56,16 @@ here is [Wassily Kardinsky's Composition VII](https://en.wikipedia.org/wiki/Comp
 
 ## Implementation Details
 The Content and Style loss functions used are exactly the same as the ones the authors of the paper originally used. Furthermore, the style layers
-used for the Style loss are also the same. 
+used for the Style loss are also the same.  
+
 The generated image is initialized to a percentage of white noise (fixed at 99%) before being fed to the ConvNet. The optimizer of choice in this 
 implemetation is the [Adam Optimizer](https://arxiv.org/abs/1412.6980), insted of the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS), 
 which is what the authors used. As a result, the parameters of the algorithm required some tuning to obtain good results. In particular, after 
-some trial and error, we ended
+some trial and error, we ended up on the following:
+```
+content weight (a) = 5
+style weight (b)   = 50000/100000
+learning rate      = 10
+```
+
 The VGG-19 CNN can be found [here](https://drive.google.com/drive/folders/1sP6HMKGu5nGb-szZ0qbHO4Q8kgRdjLt9).
