@@ -68,6 +68,9 @@ content weight (a) = 5
 style weight (b)   = 50000/100000
 learning rate      = 10
 ```
-Running the algorithm for 1000-1500 iterations suffices and produces nice results. With certain images, the style weight might need to be adjusted.
+Running the algorithm for 1000-1500 iterations suffices and produces nice results. With certain images, the style weight might need to be 
+adjusted.  
+It is highly advised to run the algorithm on a GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 
+60 minutes on a CPU!
 
 * The VGG-19 CNN can be found [here](https://drive.google.com/drive/folders/1sP6HMKGu5nGb-szZ0qbHO4Q8kgRdjLt9).
