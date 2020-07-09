@@ -68,5 +68,6 @@ content weight (a) = 5
 style weight (b)   = 50000/100000
 learning rate      = 10
 ```
+Running the algorithm for 1000-1500 iterations suffices and produces nice results. With certain images, the style weight might need to be adjusted.
 
-The VGG-19 CNN can be found [here](https://drive.google.com/drive/folders/1sP6HMKGu5nGb-szZ0qbHO4Q8kgRdjLt9).
+* The VGG-19 CNN can be found [here](https://drive.google.com/drive/folders/1sP6HMKGu5nGb-szZ0qbHO4Q8kgRdjLt9).
