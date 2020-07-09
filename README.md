@@ -47,10 +47,10 @@ From left to right the parameter b (emphasis on style) is increased, whereas par
 here is [Wassily Kardinsky's Composition VII](https://en.wikipedia.org/wiki/Composition_VII):
 
 <p align="center">
-<img src="images/composition_400x300.jpg" width="300"/>
-<img src="images/parth_comp_a5_b500.png" width="300"/>
-<img src="images/parth_comp_a5_b5000.jpg" width="300"/>
-<img src="images/parth_comp_a5_b50000.png" width="300"/>
-<img src="images/parth_comp_a5_b500000.png" width="300"/>
+<img src="images/composition_400x300.jpg" width="200"/>
+<img src="images/parth_comp_a5_b500.png" width="200"/>
+<img src="images/parth_comp_a5_b5000.jpg" width="200"/>
+<img src="images/parth_comp_a5_b50000.png" width="200"/>
+<img src="images/parth_comp_a5_b500000.png" width="200"/>
 
 </p>
