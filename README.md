@@ -22,14 +22,12 @@ paintings as style images. Clearly, the algorithm produces visually appealing re
 <img src="images/guernica_500x400.jpg" width="300"/>
 <img src="images/dit_neighb_a5_b100000.jpg" width="300">
 <img src="images/neighb_colors_500x400.jpg" width="300">
-<img src="images/dit_scream_a5_b100000.png" width="300">
-<img src="images/scream_500x400.jpg" width="300">
 </p>
 
 Next, we will be using the [Parthenon](https://en.wikipedia.org/wiki/Parthenon) as the content image: 
 
 <p align="center">
-<img src="images/acropolis_400x300.jpg" width="600"/>
+<img src="images/acropolis.jpg" width="600"/>
 
 <img src="images/parth_kiss_a5_b50000.png" width="300">
 <img src="images/thekiss_400x300.jpg" width="300">
