@@ -72,8 +72,8 @@ The layers used for the style reconstructions are, as advised in the paper, `con
 the weight for each "active" layer is 1 / number of active layers, in our case 1/5) . For the content reconstructions layer `conv4_2` was used, 
 again, as advised in the paper.  
 
-In general, running the algorithm for 1000-1500 iterations produces visually appealing results. It is highly advised to run the algorithm on a 
+In general, running the algorithm for 1000-1500 iterations produces nice results. It is highly advised to run the algorithm on a 
 GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 60 minutes on a CPU!
 
-* The pre-trained VGG-19 network can be found [here](https://www.vlfeat.org/matconvnet/pretrained/). After downloading, place it on 
-`./pretrained-model/imagenet-vgg-verydeep-19.mat`.
+* The pre-trained VGG-19 network can be found [here](https://www.vlfeat.org/matconvnet/pretrained/) (see VGG-VD section). After downloading, 
+place it on `./pretrained-model/imagenet-vgg-verydeep-19.mat`.
