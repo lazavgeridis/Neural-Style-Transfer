@@ -1,6 +1,6 @@
 '''
  - Implementation of the paper: Leon A. Gatys, Alexander S. Ecker, Matthias Bethge, (2015). A Neural Algorithm of Artistic Style
- - Code is heavily inspired by one of the deeplearning.ai' s deep learning specialization assignments (Course 4 - Week 4).
+ - Code is inspired by one of deeplearning.ai' s deep learning specialization assignments (Course 4 - Week 4).
 
 '''
 
@@ -33,19 +33,21 @@ def compute_content_cost(a_C, a_G):
     """
 
     # Retrieve dimensions from a_G
-    m, n_H, n_W, n_C = a_G.get_shape().as_list()
+    _, n_H, n_W, n_C = a_G.get_shape().as_list()
+    N_l = n_C
+    M_l = n_H * n_W
 
     # Reshape a_C and a_G 
-    a_C_unrolled = tf.reshape(a_C, [n_H * n_W, n_C])
-    a_G_unrolled = tf.reshape(a_G, [n_H * n_W, n_C])
+    a_C_unrolled = tf.reshape(a_C, (M_l, N_l))
+    a_G_unrolled = tf.reshape(a_G, (M_l, N_l))
 
-    # compute the cost
-    c1 = 1 / (4  * n_H * n_W * n_C)               # option a) the smallest coefficient
-    c2 = 1 / (2 * n_H**0.5 * n_W**0.5 * n_C**0.5) # option b) c2 = sqrt(c1) => c2 > c1
-    c3 = 0.5                                      # option c) what the authors of the paper used - it seems to preserve the content better
+    # compute the cost - both options b and c are faster in terms of iterations when it comes to "painting" the content image
+    c1 = 0.5                                      # option a - what the authors of the paper used 
+    c2 = 1 / (4  * n_H * n_W * n_C)               # option b
+    c3 = 1 / (2 * n_H**0.5 * n_W**0.5 * n_C**0.5) # option c
 
-    c = c3
-    J_content = c * tf.reduce_sum(tf.pow((a_C_unrolled - a_G_unrolled), 2))
+    C = c1
+    J_content = C * tf.reduce_sum(tf.pow((a_C_unrolled - a_G_unrolled), 2))
 
     return J_content
 
@@ -75,17 +77,17 @@ def compute_layer_style_cost(a_S, a_G):
     """
 
     # Retrieve dimensions from a_G
-    m, n_H, n_W, n_C = a_G.get_shape().as_list()
+    _, n_H, n_W, n_C = a_G.get_shape().as_list()
+    N_l = n_C
+    M_l = n_H * n_W
 
     # Reshape the images to have them of shape (n_C, n_H*n_W)
-    #a_S = tf.reshape(a_S, [n_C, n_H * n_W])
-    #a_G = tf.reshape(a_G, [n_C, n_H * n_W])
-    a_S = tf.reshape(a_S, (n_H * n_W, n_C))
-    a_G = tf.reshape(a_G, (n_H * n_W, n_C))
+    a_S = tf.reshape(a_S, (M_l, N_l))
+    a_G = tf.reshape(a_G, (M_l, N_l))
 
     # Computing gram_matrices for both images S and G
-    GS = gram_matrix(a_S)
-    GG = gram_matrix(a_G)
+    GS = gram_matrix(tf.transpose(a_S))
+    GG = gram_matrix(tf.transpose(a_G))
 
     # Computing the loss
     J_style_layer = (1. / (4 * n_H **2 * n_W**2 * n_C**2)) * tf.reduce_sum(tf.pow((GS - GG), 2))
@@ -141,8 +143,7 @@ def compute_style_cost(model, sess, STYLE_LAYERS):
     return J_style
 
 
-def total_cost(J_content, J_style, J_tv, alpha = 10, beta = 40, total_variation_weight = 1):
-#def total_cost(J_content, J_style, alpha = 10, beta = 40):
+def total_cost(J_content, J_style, alpha = 5, beta = 5000):
     """
     Computes the total cost function
     
@@ -156,8 +157,8 @@ def total_cost(J_content, J_style, J_tv, alpha = 10, beta = 40, total_variation_
     J -- total cost as defined by the formula
     """
     
-    J = alpha * J_content + beta * J_style + total_variation_weight * J_tv
-    
+    J = alpha * J_content + beta * J_style    
+
     return J
 
 
@@ -189,7 +190,6 @@ def model_nn(sess, model, train_step, J, J_content, J_style, input_image, num_it
             save_image("output/" + str(i) + ".png", generated_image)
     
     # save last generated image
-    #generated_image = generated_image.reshape((400, 300, 3))
     save_image('output/generated_image.jpg', generated_image)
     
     return generated_image
@@ -238,28 +238,27 @@ def main():
     J_style = compute_style_cost(model, sess, STYLE_LAYERS)
 
     # Denoising loss
-    J_tv = tf.image.total_variation(model['input'])
+    #J_tv = tf.image.total_variation(model['input'])
 
     a = 5
-    b = 500000
-    tv_weight = 1e4
-    learn_rate = 10.0
+    b = 5000
+    #tv_weight = 1e4
+    lr = 1e01
     
-    print("a = %d\nb = %d\ntotal variation weight = %f\nlearning_rate = %f" %(a, b, tv_weight, learn_rate))
-    #print("a = %d\nb = %d\nlearning_rate = %f" %(a, b, learn_rate))
+    #print("a = %d\nb = %d\ntotal variation weight = %f\nlearning_rate = %f" %(a, b, tv_weight, learn_rate))
+    print("a = %d\nb = %d\nlearning_rate = %f" %(a, b, lr))
     
     # Compute the total cost
-    #J = total_cost(J_content, J_style, alpha = a, beta = b)
-    J = total_cost(J_content, J_style, J_tv, alpha = a, beta = b, total_variation_weight = tv_weight)
+    J = total_cost(J_content, J_style, alpha = a, beta = b)
+    #J = total_cost(J_content, J_style, J_tv, alpha = a, beta = b, total_variation_weight = tv_weight)
     
     # define optimizer
-    optimizer = tf.train.AdamOptimizer(learning_rate=learn_rate, beta1=0.9, beta2=0.999, epsilon=1e-08)
-    #optimizer = tf.train.AdamOptimizer(learning_rate=learn_rate)
+    optimizer = tf.train.AdamOptimizer(learning_rate=lr, beta1=0.9, beta2=0.999, epsilon=1e-08)
     
     # define train_step
     train_step = optimizer.minimize(J)
     
-    model_nn(sess, model, train_step, J, J_content, J_style, generated_image, num_iterations = 3000)
+    model_nn(sess, model, train_step, J, J_content, J_style, generated_image, num_iterations = 1500)
     
     sess.close()
 
