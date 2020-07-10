@@ -55,21 +55,22 @@ here is [Wassily Kardinsky's Composition VII](https://en.wikipedia.org/wiki/Comp
 </p>
 
 ## Implementation Details
-The Content and Style loss functions used are exactly the same as the ones the authors of the paper originally used. Furthermore, the style layers
-used for the Style loss are also the same.  
 
-The generated image is initialized to a percentage of white noise (fixed at 99%) before being fed to the ConvNet. The optimizer of choice in this 
-implemetation is the [Adam Optimizer](https://arxiv.org/abs/1412.6980), insted of the [L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS), 
-which is what the authors used. As a result, the parameters of the algorithm required some tuning to obtain good results. In particular, we 
-experimented with different values of `content weight`, `style weight` and `learning rate`. After some trial and error, we ended up on the 
-following:
+The generated image is initialized with a percentage of white noise (the percentage for the examples above was 99%) before being fed to the 
+ConvNet. The optimizer of choice in this implemetation is the [Adam Optimizer](https://arxiv.org/abs/1412.6980), instead of 
+[L-BFGS](https://en.wikipedia.org/wiki/Limited-memory_BFGS), which is what the authors of the paper used. As a result, the parameters of the 
+algorithm required some tuning to obtain good results. In particular, we experimented with different values of `content weight`, `style weight` 
+and `learning rate`. After some 'trial and error', we ended up with the following:
 ```
 content weight (a) = 5
-style weight (b)   = 50000/100000
+style weight   (b) = 50000/100000/500000 (depending on the style image being used)
 learning rate      = 10
 ```
-Running the algorithm for 1000-1500 iterations suffices and produces nice results. With certain images, the style weight might need to be 
-adjusted.  
+The layers used for the style reconstructions are, as advised in the paper, `conv1_1`, `conv2_1`, `conv3_1`, `conv4_1` and `conv5_1` (in general 
+the weight for each "active" layer is 1 / number of active layers) . For the content reconstructions layer `conv4_2` was used, again, as advised 
+in the paper.  
+In general, running the algorithm for 1000-1500 iterations produces visually appealing results. With certain images, the style weight might need 
+to be adjusted.   
 It is highly advised to run the algorithm on a GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 
 60 minutes on a CPU!
 
