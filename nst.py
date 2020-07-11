@@ -202,7 +202,7 @@ def main():
     content_image = imageio.imread("images/dit_500x400.jpg")
     content_image = reshape_and_normalize_image(content_image)
 
-    style_image = imageio.imread("images/styles/scream_500x400.jpg")
+    style_image = imageio.imread("images/scream_500x400.jpg")
     style_image = reshape_and_normalize_image(style_image)
 
     generated_image = generate_noise_image(content_image)
