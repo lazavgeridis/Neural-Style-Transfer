@@ -75,10 +75,15 @@ again, as advised in the paper.
 In general, running the algorithm for 1000-1500 iterations produces nice results. However, it is highly advised to run the algorithm on a 
 GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 60 minutes on a CPU!
 
+Sidenote: Both the content and style image must be of the same dimensions
+
 ## Setup
 
 ### Dependencies 
-* 
+* [TensorFlow](https://github.com/tensorflow/tensorflow)
+* [NumPy](https://github.com/numpy/numpy)
+* [SciPy](https://github.com/scipy/scipy)
+* [Imageio](https://github.com/imageio/imageio)
 
 ### Data
 * The pre-trained VGG-19 network can be found [here](https://www.vlfeat.org/matconvnet/pretrained/) (see VGG-VD section). After downloading, 
