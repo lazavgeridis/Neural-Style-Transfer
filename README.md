@@ -62,8 +62,8 @@ ConvNet. The optimizer of choice in this implemetation is the [Adam Optimizer](h
 algorithm required some tuning in order to obtain good results. In particular, we experimented with different values of `content weight`, 
 `style weight` and `learning rate`. After some 'trial and error', we ended up with the following:
 ```
-content weight (a) = 5
-style weight   (b) = 50000/100000/500000 (depending on the style image being used)
+content weight (alpha) = 5
+style weight   (beta)  = 50000/100000/500000 (depending on the style image being used)
 learning rate      = 10
 ```
 With certain images, the `style weight` might need to be adjusted (choose one of the values shown above).  
@@ -75,7 +75,7 @@ again, as advised in the paper.
 In general, running the algorithm for 1000-1500 iterations produces nice results. However, it is highly advised to run the algorithm on a 
 GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 60 minutes on a CPU!
 
-Sidenote: Both the content and style image must be of the same dimensions
+Sidenote: Both the content and style image must be the same dimensions
 
 ## Setup
 
