@@ -3,14 +3,10 @@
 import os
 import sys
 import scipy.io
-import scipy.misc
 import imageio
-import matplotlib.pyplot as plt
-from matplotlib.pyplot import imshow
-from PIL import Image
+import numpy as np
 from nst_utils import *
 
-import numpy as np
 #import tensorflow as tf
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()

@@ -6,9 +6,6 @@
 
 import os
 import sys
-import matplotlib.pyplot as plt 
-from matplotlib.pyplot import imshow 
-from PIL import Image
 from nst_utils import *
 import numpy as np
 import imageio
@@ -206,7 +203,6 @@ def main():
     style_image = reshape_and_normalize_image(style_image)
 
     generated_image = generate_noise_image(content_image)
-    imshow(generated_image[0])
     model = load_vgg_model("pretrained-model/imagenet-vgg-verydeep-19.mat")
     
     # Assign the content image to be the input of the VGG model.
