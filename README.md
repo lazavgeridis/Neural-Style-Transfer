@@ -64,7 +64,7 @@ algorithm required some tuning in order to obtain good results. In particular, w
 ```
 content weight (alpha) = 5
 style weight   (beta)  = 50000/100000/500000 (depending on the style image being used)
-learning rate      = 10
+learning rate          = 10
 ```
 With certain images, the `style weight` might need to be adjusted (choose one of the values shown above).  
 
