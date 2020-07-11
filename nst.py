@@ -17,7 +17,13 @@ import imageio
 import tensorflow.compat.v1 as tf
 tf.disable_v2_behavior()
     
-#%matplotlib inline
+# We use the style layers that are advised in the paper 
+STYLE_LAYERS = ['conv1_1', 'conv2_1', 'conv3_1', 'conv4_1', 'conv5_1']
+
+# default arguments
+ALPHA         = 5e0
+BETA          = 5e4
+LEARNING_RATE = 1e1
 
 
 def compute_content_cost(a_C, a_G):
@@ -95,15 +101,6 @@ def compute_layer_style_cost(a_S, a_G):
     return J_style_layer
 
 
-# We use the style layers and weights that are advised in the paper 
-STYLE_LAYERS = [        
-    ('conv1_1', 0.2),
-    ('conv2_1', 0.2),
-    ('conv3_1', 0.2),
-    ('conv4_1', 0.2),
-    ('conv5_1', 0.2)]
-
-
 def compute_style_cost(model, sess, STYLE_LAYERS):
     """
     Computes the overall style cost from several chosen layers
@@ -121,7 +118,7 @@ def compute_style_cost(model, sess, STYLE_LAYERS):
     # initialize the overall style cost
     J_style = 0
 
-    for layer_name, coeff in STYLE_LAYERS:
+    for layer_name in STYLE_LAYERS:
 
         # Select the output tensor of the currently selected layer
         out = model[layer_name]
@@ -138,7 +135,7 @@ def compute_style_cost(model, sess, STYLE_LAYERS):
         J_style_layer = compute_layer_style_cost(a_S, a_G)
 
         # Add coeff * J_style_layer of this layer to overall style cost
-        J_style += coeff * J_style_layer
+        J_style += 1. / len(STYLE_LAYERS) * J_style_layer
 
     return J_style
 
@@ -178,7 +175,7 @@ def model_nn(sess, model, train_step, J, J_content, J_style, input_image, num_it
         # Compute the generated image by running the session on the current model['input']
         generated_image = sess.run(model['input'])
 
-        # Print every x iteration.
+        # Print every x iterations
         if i%100 == 0:
             Jt, Jc, Js = sess.run([J, J_content, J_style])
             print("Iteration " + str(i) + " :")
@@ -204,11 +201,9 @@ def main():
     
     content_image = imageio.imread("images/dit_500x400.jpg")
     content_image = reshape_and_normalize_image(content_image)
-    #imshow(content_image)
 
     style_image = imageio.imread("images/styles/scream_500x400.jpg")
     style_image = reshape_and_normalize_image(style_image)
-    #imshow(style_image)
 
     generated_image = generate_noise_image(content_image)
     imshow(generated_image[0])
@@ -240,12 +235,11 @@ def main():
     # Denoising loss
     #J_tv = tf.image.total_variation(model['input'])
 
-    a = 5
-    b = 5000
+    a = ALPHA
+    b = BETA
     #tv_weight = 1e4
-    lr = 1e01
+    lr = LEARNING_RATE
     
-    #print("a = %d\nb = %d\ntotal variation weight = %f\nlearning_rate = %f" %(a, b, tv_weight, learn_rate))
     print("a = %d\nb = %d\nlearning_rate = %f" %(a, b, lr))
     
     # Compute the total cost
