@@ -66,13 +66,13 @@ content weight (a) = 5
 style weight   (b) = 50000/100000/500000 (depending on the style image being used)
 learning rate      = 10
 ```
-With certain images, the `style weight` might need to be adjusted (choose on of the values shown above).  
+With certain images, the `style weight` might need to be adjusted (choose one of the values shown above).  
 
 The layers used for the style reconstructions are, as advised in the paper, `conv1_1`, `conv2_1`, `conv3_1`, `conv4_1` and `conv5_1` (in general 
 the weight for each "active" layer is 1 / number of active layers, in our case 1/5) . For the content reconstructions layer `conv4_2` was used, 
 again, as advised in the paper.  
 
-In general, running the algorithm for 1000-1500 iterations produces nice results. It is highly advised to run the algorithm on a 
+In general, running the algorithm for 1000-1500 iterations produces nice results. However, it is highly advised to run the algorithm on a 
 GPU, since it significantly speeds up the process. For a 400x300 image, 1000 iterations take about 60 minutes on a CPU!
 
 * The pre-trained VGG-19 network can be found [here](https://www.vlfeat.org/matconvnet/pretrained/) (see VGG-VD section). After downloading, 
